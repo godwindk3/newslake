@@ -7,8 +7,7 @@ from src.adapters.newsapi_adapter import NewsApiAdapter
 class AdapterFactory:
 
     _adapter_map: Dict[str, Type[BaseNewsAdapter]] = {
-        # "thenewsapi": TheNewsApiAdapter,
-
+        "thenewsapi": TheNewsApiAdapter,
         "newsapi": NewsApiAdapter,
     }
 

@@ -4,7 +4,7 @@
         "name": "TheNewsAPI - Top Headlines",
         "is_active": true,
         "category": "general",
-        "schedule": "daily",           
+        "schedule": "hourly",           
         "priority": 1,
         
         "auth_env_key": "THENEWSAPI_KEY",
@@ -17,14 +17,41 @@
             "timeout": 15,
             "params": {
                 "locale": "us",
-                "limit": 10,
+                "limit": 3,
                 "language": "en"
             },
             "headers": {}
         },
-        
+
         "adapter_type": "thenewsapi",
         "response_key": "data",        
-        "description": "Lấy top tin tức theo khu vực"
+        "description": "Fetch top headlines from thenewsapi.com"
+    },
+    {
+        "api_id": "newsapi_org_top",
+        "name": "NewsAPI.org - Top Headlines",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 2,
+        
+        "auth_env_key": "NEWSAPI_KEY",
+        "auth_type": "header",
+        "auth_header_name": "X-Api-Key",
+        "auth_header_prefix": "",
+        
+        "request_details": {
+            "base_url": "https://newsapi.org/v2/top-headlines",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "country": "us"
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "newsapi",
+        "response_key": "articles",        
+        "description": "Fetch top headlines from NewsAPI.org"
     }
 ]

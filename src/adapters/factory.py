@@ -1,14 +1,15 @@
 from typing import Dict, Any, Type
 from src.adapters.base_adapter import BaseNewsAdapter
 from src.adapters.thenewsapi_adapter import TheNewsApiAdapter
+from src.adapters.newsapi_adapter import NewsApiAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
 
     _adapter_map: Dict[str, Type[BaseNewsAdapter]] = {
-        "thenewsapi": TheNewsApiAdapter,
-        # add more here
+        # "thenewsapi": TheNewsApiAdapter,
 
+        "newsapi": NewsApiAdapter,
     }
 
     @classmethod

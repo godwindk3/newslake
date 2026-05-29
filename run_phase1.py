@@ -38,12 +38,16 @@ def test_pipeline():
             if auth_type == "param":
                 params[config.get("auth_param_name")] = api_key
             elif auth_type == "header":
-                headers[config.get("auth_header_name")] = f"Bearer {api_key}"
+
+                prefix = config.get("auth_header_prefix", "")
+
+                formatted_key = f"{prefix} {api_key}".strip()
+
+                headers[config.get("auth_header_name")] = formatted_key
 
         raw_json = client.fetch(url=req_details["base_url"], params=params, headers=headers)
         if not raw_json:
             continue
-
 
         try:
             adapter_type = config.get("adapter_type")

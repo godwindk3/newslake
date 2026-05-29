@@ -1,6 +1,6 @@
 from typing import Dict, Any, Type
 from src.adapters.base_adapter import BaseNewsAdapter
-from adapters.thenewsapi_adapter import TheNewsApiAdapter
+from src.adapters.thenewsapi_adapter import TheNewsApiAdapter
 # import new adapters here in the future
 
 class AdapterFactory:

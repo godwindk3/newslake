@@ -1,0 +1,30 @@
+[
+    {
+        "api_id": "thenewsapi_top",
+        "name": "TheNewsAPI - Top Headlines",
+        "is_active": true,
+        "category": "general",
+        "schedule": "daily",           
+        "priority": 1,
+        
+        "auth_env_key": "THENEWSAPI_KEY",
+        "auth_type": "param",
+        "auth_param_name": "api_token",
+        
+        "request_details": {
+            "base_url": "https://api.thenewsapi.com/v1/news/top",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "locale": "us",
+                "limit": 10,
+                "language": "en"
+            },
+            "headers": {}
+        },
+        
+        "adapter_type": "thenewsapi",
+        "response_key": "data",        
+        "description": "Lấy top tin tức theo khu vực"
+    }
+]

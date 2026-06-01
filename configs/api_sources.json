@@ -153,7 +153,7 @@
         "request_details": {
             "base_url": "https://api.freenewsapi.io/v1/news",
             "method": "GET",
-            "timeout": 60,
+            "timeout": 15,
             "params": {
                 "language": "en",
                 "country": "us"
@@ -164,5 +164,56 @@
         "adapter_type": "freenewsapi",
         "response_key": "articles",        
         "description": "Fetch latest news from FreeNewsAPI.io using defensive parsing"
+    },
+    {
+        "api_id": "guardian_latest",
+        "name": "The Guardian API - Latest News",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 7,
+        
+        "auth_env_key": "GUARDIAN_API_KEY",
+        "auth_type": "param",
+        "auth_param_name": "api-key",
+        
+        "request_details": {
+            "base_url": "https://content.guardianapis.com/search",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "page-size": 10,
+                "show-fields": "trailText,byline"
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "guardian",
+        "response_key": "response",        
+        "description": "Fetch latest news from The Guardian API"
+    },
+    {
+        "api_id": "nyt_top_stories",
+        "name": "New York Times - Top Stories",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 8,
+        
+        "auth_env_key": "NYT_API_KEY",
+        "auth_type": "param",
+        "auth_param_name": "api-key",
+        
+        "request_details": {
+            "base_url": "https://api.nytimes.com/svc/topstories/v2/home.json",
+            "method": "GET",
+            "timeout": 15,
+            "params": {},
+            "headers": {}
+        },
+
+        "adapter_type": "nytimes",
+        "response_key": "results",        
+        "description": "Fetch top stories from the New York Times API homepage section"
     }
 ]

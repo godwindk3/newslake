@@ -6,6 +6,8 @@ from src.adapters.gnewsapi_adapter import GNewsApiAdapter
 from src.adapters.newsdataapi_adapter import NewsDataApiAdapter
 from src.adapters.currentnewsapi_adapter import CurrentsApiAdapter
 from src.adapters.freenewsapi_adapter import FreeNewsApiAdapter
+from src.adapters.theguardianapi_adapter import GuardianAdapter
+from src.adapters.nytimes_adapter import NytAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
@@ -16,7 +18,10 @@ class AdapterFactory:
         # "gnewsapi": GNewsApiAdapter,
         # "newsdataapi": NewsDataApiAdapter,
         # "currentsapi": CurrentsApiAdapter,
-        "freenewsapi": FreeNewsApiAdapter,
+        # "freenewsapi": FreeNewsApiAdapter,
+        # "guardian": GuardianAdapter,
+        "nytimes": NytAdapter,
+        
     }
 
     @classmethod

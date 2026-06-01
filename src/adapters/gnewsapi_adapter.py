@@ -3,7 +3,7 @@ from src.models.data_contract import StandardizedNewsRecord
 from src.adapters.base_adapter import BaseNewsAdapter
 
 class GNewsApiAdapter(BaseNewsAdapter):
-    def normalize(self):
+    def normalize(self) -> List[StandardizedNewsRecord]:
         """
         Transform Gnews.io specific JSON structure into the standard format
         """

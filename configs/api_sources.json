@@ -1,6 +1,6 @@
 [
     {
-        "api_id": "thenewsapi_top",
+        "api_id": "thenewsapi_com_top",
         "name": "TheNewsAPI - Top Headlines",
         "is_active": true,
         "category": "general",
@@ -55,7 +55,7 @@
         "description": "Fetch top headlines from NewsAPI.org"
     },
     {
-        "api_id": "gnews_top",
+        "api_id": "gnewsapi_io_top",
         "name": "GNews - Top Headlines",
         "is_active": true,
         "category": "general",
@@ -81,6 +81,32 @@
         "adapter_type": "gnewsapi",
         "response_key": "articles",        
         "description": "Fetch top headlines from GNews.io"
+    },
+    {
+        "api_id": "newsdataapi_io_top",
+        "name": "NewsData.io - Latest News",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 4,
+        
+        "auth_env_key": "NEWSDATA_API_KEY",
+        "auth_type": "param",
+        "auth_param_name": "apikey",
+        
+        "request_details": {
+            "base_url": "https://newsdata.io/api/1/news",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "country": "us",
+                "language": "en"
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "newsdataapi",
+        "response_key": "results",        
+        "description": "Fetch latest news from NewsData.io"
     }
-    
 ]

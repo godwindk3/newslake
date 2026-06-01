@@ -3,6 +3,7 @@ from src.adapters.base_adapter import BaseNewsAdapter
 from src.adapters.thenewsapi_adapter import TheNewsApiAdapter
 from src.adapters.newsapi_adapter import NewsApiAdapter
 from src.adapters.gnewsapi_adapter import GNewsApiAdapter
+from src.adapters.newsdataapi_adapter import NewsDataApiAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
@@ -10,7 +11,8 @@ class AdapterFactory:
     _adapter_map: Dict[str, Type[BaseNewsAdapter]] = {
         # "thenewsapi": TheNewsApiAdapter,
         # "newsapi": NewsApiAdapter,
-        "gnewsapi": GNewsApiAdapter,
+        # "gnewsapi": GNewsApiAdapter,
+        "newsdataapi": NewsDataApiAdapter,
     }
 
     @classmethod

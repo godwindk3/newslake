@@ -9,6 +9,7 @@ from src.adapters.freenewsapi_adapter import FreeNewsApiAdapter
 from src.adapters.theguardianapi_adapter import GuardianAdapter
 from src.adapters.nytimes_adapter import NytAdapter
 from src.adapters.eventregistry_adapter import EventRegistryAdapter
+from src.adapters.spaceflightnews_adapter import SpaceflightNewsAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
@@ -22,7 +23,8 @@ class AdapterFactory:
         # "freenewsapi": FreeNewsApiAdapter,
         # "guardian": GuardianAdapter,
         # "nytimes": NytAdapter,
-        "eventregistry": EventRegistryAdapter,
+        # "eventregistry": EventRegistryAdapter,
+        "spaceflightnews": SpaceflightNewsAdapter,
     }
 
     @classmethod

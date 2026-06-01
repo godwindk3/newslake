@@ -242,5 +242,29 @@
         "adapter_type": "eventregistry",
         "response_key": "articles",        
         "description": "Fetch latest news from Event Registry"
+    },
+    {
+        "api_id": "spaceflight_news_latest",
+        "name": "Spaceflight News API - Latest",
+        "is_active": true,
+        "category": "science",         
+        "schedule": "hourly",          
+        "priority": 11,
+        
+        "auth_type": "none",
+        
+        "request_details": {
+            "base_url": "https://api.spaceflightnewsapi.net/v4/articles",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "limit": 10
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "spaceflightnews",
+        "response_key": "results",        
+        "description": "Fetch latest space and astronomy news (No API Key required)"
     }
 ]

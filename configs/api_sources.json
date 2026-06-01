@@ -53,5 +53,34 @@
         "adapter_type": "newsapi",
         "response_key": "articles",        
         "description": "Fetch top headlines from NewsAPI.org"
+    },
+    {
+        "api_id": "gnews_top",
+        "name": "GNews - Top Headlines",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 3,
+        
+        "auth_env_key": "GNEWS_API_KEY",
+        "auth_type": "param",
+        "auth_param_name": "apikey",
+        
+        "request_details": {
+            "base_url": "https://gnews.io/api/v4/top-headlines",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "country": "us",
+                "lang": "en",
+                "max": 10
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "gnews",
+        "response_key": "articles",        
+        "description": "Fetch top headlines from GNews.io"
     }
+    
 ]

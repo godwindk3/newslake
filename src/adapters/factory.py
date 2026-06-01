@@ -8,6 +8,7 @@ from src.adapters.currentnewsapi_adapter import CurrentsApiAdapter
 from src.adapters.freenewsapi_adapter import FreeNewsApiAdapter
 from src.adapters.theguardianapi_adapter import GuardianAdapter
 from src.adapters.nytimes_adapter import NytAdapter
+from src.adapters.eventregistry_adapter import EventRegistryAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
@@ -20,8 +21,8 @@ class AdapterFactory:
         # "currentsapi": CurrentsApiAdapter,
         # "freenewsapi": FreeNewsApiAdapter,
         # "guardian": GuardianAdapter,
-        "nytimes": NytAdapter,
-        
+        # "nytimes": NytAdapter,
+        "eventregistry": EventRegistryAdapter,
     }
 
     @classmethod

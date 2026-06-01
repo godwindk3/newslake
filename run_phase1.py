@@ -16,7 +16,7 @@ def load_configs(config_path: str) -> list:
     
 
 def test_pipeline():
-    config_file = os.path.join(os.path.dirname(__file__), 'configs', 'api_sources.json')
+    config_file = os.path.join(os.path.dirname(__file__), 'configs', 'api_sources_test.json')
     api_configs = load_configs(config_file)
 
     # Initialize a single client instance to reuse the connection pool

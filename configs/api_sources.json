@@ -215,5 +215,32 @@
         "adapter_type": "nytimes",
         "response_key": "results",        
         "description": "Fetch top stories from the New York Times API homepage section"
+    },
+    {
+        "api_id": "event_registry_latest",
+        "name": "Event Registry - Latest Articles",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 10,
+        
+        "auth_env_key": "EVENT_REGISTRY_API_KEY",
+        "auth_type": "param",
+        "auth_param_name": "apiKey",
+        
+        "request_details": {
+            "base_url": "https://eventregistry.org/api/v1/article/getArticles",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "lang": "eng",
+                "articlesCount": 10
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "eventregistry",
+        "response_key": "articles",        
+        "description": "Fetch latest news from Event Registry"
     }
 ]

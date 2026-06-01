@@ -32,7 +32,7 @@ class GNewsApiAdapter(BaseNewsAdapter):
                 url=raw_url,
                 published_at=item.get('publishedAt', 'unknown_date'),
                 content=item.get('description'),
-                author='unknown'
+                author=None
             )
 
             standardized_list.append(record)

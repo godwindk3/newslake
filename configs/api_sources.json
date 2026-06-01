@@ -78,7 +78,7 @@
             "headers": {}
         },
 
-        "adapter_type": "gnews",
+        "adapter_type": "gnewsapi",
         "response_key": "articles",        
         "description": "Fetch top headlines from GNews.io"
     }

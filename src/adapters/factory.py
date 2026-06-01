@@ -4,6 +4,7 @@ from src.adapters.thenewsapi_adapter import TheNewsApiAdapter
 from src.adapters.newsapi_adapter import NewsApiAdapter
 from src.adapters.gnewsapi_adapter import GNewsApiAdapter
 from src.adapters.newsdataapi_adapter import NewsDataApiAdapter
+from src.adapters.currentnewsapi_adapter import CurrentsApiAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
@@ -12,7 +13,9 @@ class AdapterFactory:
         # "thenewsapi": TheNewsApiAdapter,
         # "newsapi": NewsApiAdapter,
         # "gnewsapi": GNewsApiAdapter,
-        "newsdataapi": NewsDataApiAdapter,
+        # "newsdataapi": NewsDataApiAdapter,
+        "currentsapi": CurrentsApiAdapter
+
     }
 
     @classmethod

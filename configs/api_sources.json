@@ -108,5 +108,33 @@
         "adapter_type": "newsdataapi",
         "response_key": "results",        
         "description": "Fetch latest news from NewsData.io"
+    },
+    {
+        "api_id": "currentsapi_services_latest",
+        "name": "Currents API - Latest News",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 5,
+        
+        "auth_env_key": "CURRENTS_API_KEY",
+        "auth_type": "header",
+        "auth_header_name": "Authorization",
+        "auth_header_prefix": "",
+        
+        "request_details": {
+            "base_url": "https://api.currentsapi.services/v1/latest-news",
+            "method": "GET",
+            "timeout": 15,
+            "params": {
+                "language": "en",
+                "country": "US"
+            },
+            "headers": {}
+        },
+
+        "adapter_type": "currentsapi",
+        "response_key": "news",        
+        "description": "Fetch latest news from Currents API"
     }
 ]

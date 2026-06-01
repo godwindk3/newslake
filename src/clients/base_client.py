@@ -62,13 +62,22 @@ class APIClient:
         try:
             response = self.session.request(
                 method=req_details.get("method", "GET"),
-                url=url,
-                params=params,
-                headers=headers,
+                url=url, 
+                params=params, 
+                headers=headers, 
                 timeout=timeout
             )
             response.raise_for_status()
+            
+            # Check content type to dynamically handle JSON vs XML/RSS
+            content_type = response.headers.get("Content-Type", "").lower()
+            
+            if "xml" in content_type or "rss" in content_type or "text" in content_type:
+                # Wrap the raw XML text in a dictionary to maintain pipeline compatibility
+                return {"is_xml": True, "raw_text": response.text}
+                
             return response.json()
+            
         except requests.exceptions.RequestException as e:
             print(f"Network error occurred: {e}")
             return {}

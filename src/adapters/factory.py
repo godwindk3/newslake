@@ -10,6 +10,7 @@ from src.adapters.theguardianapi_adapter import GuardianAdapter
 from src.adapters.nytimes_adapter import NytAdapter
 from src.adapters.eventregistry_adapter import EventRegistryAdapter
 from src.adapters.spaceflightnews_adapter import SpaceflightNewsAdapter
+from src.adapters.rss_adapter import RssAdapter
 # import new adapters here in the future
 
 class AdapterFactory:
@@ -24,7 +25,9 @@ class AdapterFactory:
         # "guardian": GuardianAdapter,
         # "nytimes": NytAdapter,
         # "eventregistry": EventRegistryAdapter,
-        "spaceflightnews": SpaceflightNewsAdapter,
+        # "spaceflightnews": SpaceflightNewsAdapter,
+        "rss": RssAdapter,
+        
     }
 
     @classmethod

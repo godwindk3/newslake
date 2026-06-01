@@ -266,5 +266,27 @@
         "adapter_type": "spaceflightnews",
         "response_key": "results",        
         "description": "Fetch latest space and astronomy news (No API Key required)"
+    },
+    {
+        "api_id": "rss_bbc_news",
+        "name": "BBC News RSS",
+        "is_active": true,
+        "category": "general",
+        "schedule": "hourly",          
+        "priority": 16,
+        
+        "auth_type": "none",
+        
+        "request_details": {
+            "base_url": "https://feeds.bbci.co.uk/news/rss.xml",
+            "method": "GET",
+            "timeout": 15,
+            "params": {},
+            "headers": {}
+        },
+
+        "adapter_type": "rss",
+        "response_key": "raw_text",        
+        "description": "Fetch top news from BBC RSS Feed"
     }
 ]

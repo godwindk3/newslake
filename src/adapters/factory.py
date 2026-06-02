@@ -5,7 +5,7 @@ from src.adapters.newsapi_adapter import NewsApiAdapter
 from src.adapters.gnewsapi_adapter import GNewsApiAdapter
 from src.adapters.newsdataapi_adapter import NewsDataApiAdapter
 from src.adapters.currentnewsapi_adapter import CurrentsApiAdapter
-from src.adapters.freenewsapi_adapter import FreeNewsApiAdapter
+# from src.adapters.freenewsapi_adapter import FreeNewsApiAdapter
 from src.adapters.theguardianapi_adapter import GuardianAdapter
 from src.adapters.nytimes_adapter import NytAdapter
 from src.adapters.eventregistry_adapter import EventRegistryAdapter
@@ -16,18 +16,17 @@ from src.adapters.rss_adapter import RssAdapter
 class AdapterFactory:
 
     _adapter_map: Dict[str, Type[BaseNewsAdapter]] = {
-        # "thenewsapi": TheNewsApiAdapter,
-        # "newsapi": NewsApiAdapter,
-        # "gnewsapi": GNewsApiAdapter,
-        # "newsdataapi": NewsDataApiAdapter,
-        # "currentsapi": CurrentsApiAdapter,
+        "thenewsapi": TheNewsApiAdapter,
+        "newsapi": NewsApiAdapter,
+        "gnewsapi": GNewsApiAdapter,
+        "newsdataapi": NewsDataApiAdapter,
+        "currentsapi": CurrentsApiAdapter,
         # "freenewsapi": FreeNewsApiAdapter,
-        # "guardian": GuardianAdapter,
-        # "nytimes": NytAdapter,
-        # "eventregistry": EventRegistryAdapter,
-        # "spaceflightnews": SpaceflightNewsAdapter,
+        "guardian": GuardianAdapter,
+        "nytimes": NytAdapter,
+        "eventregistry": EventRegistryAdapter,
+        "spaceflightnews": SpaceflightNewsAdapter,
         "rss": RssAdapter,
-        
     }
 
     @classmethod

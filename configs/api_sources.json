@@ -138,34 +138,6 @@
         "description": "Fetch latest news from Currents API"
     },
     {
-        "api_id": "freenewsapi_io_latest",
-        "name": "FreeNewsAPI.io - Latest News",
-        "is_active": true,
-        "category": "general",
-        "schedule": "hourly",          
-        "priority": 6,
-        
-        "auth_env_key": "FREENEWSAPI_KEY",
-        "auth_type": "header",
-        "auth_header_name": "x-api-key",
-        "auth_header_prefix": "",
-        
-        "request_details": {
-            "base_url": "https://api.freenewsapi.io/v1/news",
-            "method": "GET",
-            "timeout": 15,
-            "params": {
-                "language": "en",
-                "country": "us"
-            },
-            "headers": {}
-        },
-
-        "adapter_type": "freenewsapi",
-        "response_key": "articles",        
-        "description": "Fetch latest news from FreeNewsAPI.io using defensive parsing"
-    },
-    {
         "api_id": "guardian_latest",
         "name": "The Guardian API - Latest News",
         "is_active": true,

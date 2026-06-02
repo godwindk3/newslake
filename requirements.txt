@@ -1,3 +1,4 @@
 # Python 3.12.2
 requests==2.34.2
 python-dotenv==1.2.2
+psycopg2-binary==2.9.9

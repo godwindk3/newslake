@@ -2,6 +2,7 @@ import json
 import os
 from src.db.postgres_client import PostgresClient
 
+
 class NewsLoader:
     def __init__(self):
         self.db_client = PostgresClient()
@@ -9,6 +10,44 @@ class NewsLoader:
     def init_database(self):
         """Run the schema creation script."""
         self.db_client.create_tables()
+
+    def load_records(self, records):
+        """Insert a list of record objects into the database."""
+        # Define the upsert query for inserting or ignoring duplicates based on URL
+        upsert_query = """
+            INSERT INTO data_pipeline.news_articles
+                (
+                    id,
+                    source,
+                    title,
+                    url,
+                    published_at,
+                    content,
+                    author
+                )
+            VALUES %s
+            ON CONFLICT (url) DO NOTHING;
+        """
+
+        # Extract required fields from the records list into a list of tuples
+        values = [
+            (
+                record.id,
+                record.source,
+                record.title,
+                record.url,
+                record.published_at,
+                record.content,
+                record.author
+            )
+            for record in records
+        ]
+
+        # Execute the bulk upsert operation in the database
+        return self.db_client.bulk_upsert(
+            upsert_query,
+            values
+        )
 
     def load_json_to_db(self, staging_dir: str):
         """

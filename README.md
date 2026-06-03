@@ -100,7 +100,3 @@ Enable the `news_pipeline` DAG and trigger it manually or wait for the scheduled
 3. Add source configuration to `configs/api_sources.json`
 
 No pipeline changes are required.
-
-## License
-
-MIT License
